@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %meta{ :content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
+    %title 1024
+    %link{:href => '/stylesheets/main.css', :rel => 'stylesheet', :type => 'text/css'}
+  %body
+    %header
+      .container
+        = partial('header')
+    .wrap
+      = yield

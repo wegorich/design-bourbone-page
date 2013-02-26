@@ -1,0 +1,76 @@
+$headerHeight: 106px;
+@function getUserMargin($height) {
+  @return $headerHeight/2 - $height/2;
+}
+
+header {
+  height: $headerHeight;
+  position: relative;
+  background: url("/images/header-bg.png");
+  &:after {
+    display: block;
+    content: ' ';
+    width: 100%;
+    border-top: 1px solid $bordHeaderBot;
+    border-bottom: 3px solid $bordColor;
+    @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+  }
+  .logo {
+    position: absolute;
+    margin-left: -20px;
+    z-index: 10;
+  }
+  .nav {
+    margin: 0 0 0 250px;
+    padding: 0;
+    font-size: 18px;
+    line-height: $headerHeight;
+    &>li {
+      @include span-columns(2);
+      margin: 0;
+      margin-right: 32px;
+      width: auto;
+      .current {
+        position: relative;
+        text-decoration: none;
+        color: $selectedColor;
+        border-bottom: 1px solid;
+        @include box-shadow(0 3px 0px -2px white);
+        &:after {
+          position: absolute;
+          bottom: -9px;
+          left: 50%;
+          margin-left: -5px;
+          height: 9px;
+          width: 14px;
+          background: url('/images/header-arr.png');
+          content: '';
+        }
+      }
+    }
+  }
+  .user {
+    float: right;
+    padding: 4px 10px;
+    background: $grUserBottom;
+    @include background-image(linear-gradient($grUserTop, $grUserBottom));
+    border: 1px solid $bordColorLight;
+    border-radius: 3px;
+    margin-top: getUserMargin(30px);
+    line-height: 20px;
+    vertical-align: middle;
+    text-decoration: none;
+    color: $blackColor;
+    img {
+      float: left;
+      margin-right: 10px;
+      @include box-shadow(0 1px 2px rgba(0, 0, 0, .2));
+    }
+    &:active {
+      @include box-shadow(0 1px rgba(255, 255, 255, .6), inset 0 1px 1px $shadowInputColor);
+    }
+    &:hover {
+      @include background-image(linear-gradient($grHeaderTop, $grUserBottom));
+    }
+  }
+}

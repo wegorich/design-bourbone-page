@@ -1,0 +1,27 @@
+//************************************************************************//
+//Generate input checkbox - actions backgorund
+//************************************************************************//
+
+@mixin selected-inputs($x, $y, $checked, $focus, $disabled, $url) {
+  &{
+    display: none;
+  }
+  &:checked + label span{
+    background-position:$x $checked;
+  }
+  &:focus + label span{
+    background-position:$x $focus;
+  }
+  &:disabled + label span{
+    background-position:$x $disabled;
+  }
+  & + label span {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    margin: 8px 4px 8px 10px;
+    vertical-align: middle;
+    background: $url $x $y no-repeat;
+    cursor: pointer;
+  }
+}

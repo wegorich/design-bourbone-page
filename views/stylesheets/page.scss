@@ -1,0 +1,117 @@
+.wrap {
+  padding: 28px 0 0;
+  background: url('/images/body-bg.png');
+  .page-title {
+    position: relative;
+    background:white url('/images/page-title.bg.png');
+    line-height: 37px;
+    padding-left: 16px;
+    margin:0 14px 0 8px;
+    &:before {
+      position: absolute;
+      right: -14px;
+      width: 14px;
+      height: 37px;
+      background: url("/images/page-title-right.png");
+      content: '';
+    }
+    &:after {
+      position: absolute;
+      left: -8px;
+      top: 0;
+      width: 8px;
+      height: 37px;
+      background: url("/images/page-title-left.png");
+      content: '';
+    }
+  }
+}
+
+.item-group {
+  padding: 30px 0;
+  border-bottom: 1px solid $separatorColor;
+  @include box-shadow(0 1px rgba(255, 255, 255, 0.6));
+  &.last {
+    border: 0;
+    @include box-shadow(none);
+  }
+  .field {
+    margin-bottom: $gw-gutter;
+  }
+  .field:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.field {
+  @include clearfix;
+  color: $darkGrayColor;
+  & > label {
+    @include span-columns(3);
+    width: grid-width(2)+$gw-gutter;
+    line-height: 32px;
+    font-style: italic;
+  }
+  & > .group {
+    margin-left:grid-width(2)+$gw-gutter*2;
+    &.avatar {
+      position: relative;
+      img {
+        position: absolute;
+        left: 0;
+      }
+      .img-wrap {
+        width: 162px;
+        height: 138px;
+        margin-left: -5px;
+        background: url('/images/avatar-bg.png') no-repeat;
+        img {
+          top: 2px;
+        }
+      }
+      .avatar-descr {
+        margin-left: 26px;
+        max-width: grid-width(2);
+        line-height: $gw-gutter;
+        img {
+          margin-top: 5px;
+        }
+      }
+    }
+
+  }
+  .social-bar {
+    width: $formControlsWidth;
+    li {
+      margin-bottom: 6px;
+      padding: 10px 15px;
+      font-size: 17px;
+      line-height: 24px;
+      border: 3px solid $bordSocial;
+      border-radius: 6px;
+      color: $socialColor;
+      &.active {
+        border-color: $bordSocialActive;
+        color: $darkGrayColor;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .r {
+        font-size: 13px;
+        margin-right: 10px;
+        &.btn {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+form {
+  margin-bottom: 0;
+  .item-footer {
+    padding: 24px 0;
+    background:url("/images/footer-bg.png");
+  }
+}

@@ -1,0 +1,67 @@
+.container
+  .page-title
+    Редактировать профиль пользователя
+%form{ :action => '', :method => 'post'}
+  .container
+    .item-group
+      .field
+        %label
+          Загрузить аватар
+        .group.avatar
+          .img-wrap
+            %img{:src=>'/temp/avatar.jpg'}
+          .avatar-descr
+            %img{:src=>'/images/icon-file-arr.png'}
+            Вы можете перетащить изображение прямо в окно
+    .item-group
+      .field
+        %label{:for=>'username'} Username пользователя на сайте
+        %input{:type=>'text',:value=>'heawdwad1212',:disabled=>'',:name=>'username',:paceholder=>'username на сайте'}
+      .field
+        %label{:for=>'sitename'} Имя на сайте
+        .group
+          %input{:type=>'text',:name=>'sitename',:paceholder=>'Василий Пупкин'}
+          %div
+            %input{:type=>'checkbox',:id=>'mainname',:name=>'mainname'}
+            %label{:for=>'mainname'}
+              %span
+              Использовать в качестве основного на сайте
+    .item-group
+      .field
+        %label{:for=>'password'} Сменить пароль
+        %input{:type=>'password',:name=>'password',:placeholder=>'придумайте пароль'}
+    .item-group
+      .field
+        %label{:for=>'group'} Пол
+        .group
+          %input{:type=>'radio',:id=>'male',:name=>'group',:value=>'male'}
+          %label{:for=>'male'}
+            %span
+            Мужской
+          %input{:type=>'radio',:id=>'female',:name=>'group',:value=>'female'}
+          %label{:for=>'female'}
+            %span
+            Женский
+      .field
+        %label{:for=>'email'} Электронная почта
+        %input{:type=>'email',:name=>'email',:placeholder=>'example@mail.com'}
+      .field
+        %label{:for=>'phone'} Телефон
+        %input{:type=>'text',:name=>'phone',:placeholder=>'8(XXX) XXX XX XX'}
+    .item-group.last
+      .field
+        %label Социальные сети
+        .group
+          %ul{:class=>'social-bar'}
+            %li{:class=>'active'}
+              %a{:href=>'#',:class=>'btn small r'}
+                Закрыть доступ
+              Twitter
+            - 3.times do
+              %li
+                .r
+                  нет связи
+                Facebook
+  .item-footer
+    .container
+      %input{:type=>'submit',:class=>'btn',:value=>'Сохранить изменения'}

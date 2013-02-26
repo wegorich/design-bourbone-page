@@ -1,0 +1,101 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "custom/custom";
+@import "values";
+
+body {
+  margin: 0;
+  font-family: $helvetica;
+  background-color: $backFormFooter;
+  min-width: 1278px;
+  font-size: 13px;
+}
+
+:focus {
+  outline: 0;
+}
+
+.r {
+  float: right;
+}
+
+.container {
+  @include outer-container;
+}
+
+a {
+  color: $linkColor;
+  text-shadow: $textShadow;
+  &:hover {
+    color: $linkHoverColor;
+  }
+  img {
+    border:none;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.btn {
+  font-size: 13px;
+  background: $grBtnSuccessNormalBottom;
+  @include background-image(linear-gradient($grBtnSuccessNormalTop, $grBtnSuccessNormalBottom));
+  border-radius: 4px;
+  @include box-shadow(0 1px 2px rgba($shadowBtnBack, .75), inset 0 1px 0 rgba($shadowBtnInset, .5), inset 0 -2px 4px 1px rgba($shadowBtnInset, .2));
+  color: white !important;
+  display: inline-block;
+  color: white;
+  padding: 0 10px;
+  line-height: 30px;
+  text-decoration: none;
+  border: none;
+  text-shadow: 0 -1px 0 rgba(black, .3);
+  -webkit-background-clip: padding-box;
+  cursor: pointer;
+}
+
+.btn.small{
+  line-height: 24px;
+}
+
+.btn:hover {
+  background: $grBtnSuccessHoverBottom;
+  @include background-image(linear-gradient($grBtnSuccessHoverTop, $grBtnSuccessHoverBottom));
+}
+
+.btn:active {
+  background: $grBtnSuccessHoverBottom;
+  @include box-shadow(inset 0 1px 0 rgba($shadowBtnBack, .5));
+  @include background-image(linear-gradient($grBtnSuccessHoverBottom, $grBtnSuccessHoverTop));
+}
+
+#{$all-text-inputs-disabled} {
+  background: $backInputReadonly;
+  text-shadow: $textShadow;
+}
+
+#{$all-text-inputs} {
+  border: 1px solid $bordInputColor;
+  margin: 0;
+  border-radius: 2px;
+  width: $formControlsWidth;
+  padding: 8px 12px 6px;
+  @include box-shadow(0 1px rgba(255, 255, 255, .6), inset 0 1px 1px $shadowInputColor);
+}
+
+input[type="radio"] {
+  @include selected-inputs(-20px, 0, -27px, -56px, -85px, url(/images/check-radio-bg.png));
+}
+
+input[type="checkbox"] {
+  @include selected-inputs(0, -1px, -28px, -57px, -85px, url(/images/check-radio-bg.png));
+}
+
+@import "header";
+@import "page";
+@import "footer";
+
